@@ -168,6 +168,7 @@ def gunicorn_run():
     class PecanApplication(WSGIApplication):
 
         def init(self, parser, opts, args):
+            self.app_uri = {}
             if len(args) != 1:
                 parser.error("No configuration file was specified.")
 
